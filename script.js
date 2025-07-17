@@ -25,3 +25,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+import { neon } from '@netlify/neon';
+
+const sql = neon(); // يستعمل NETLIFY_DATABASE_URL تلقائيًا
+
+export async function handler(event, context) {
+    const posts = await sql`SELECT * FROM posts`;
+    return {
+        statusCode: 200,
+        body: JSON.stringify(posts),
+    };
+}
