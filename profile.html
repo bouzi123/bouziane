@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ملفي الشخصي - منصة شامو</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<header>
+  <nav class="navbar">
+    <div class="logo">شامو</div>
+    <a href="index.html" class="btn-primary">الصفحة الرئيسية</a>
+  </nav>
+</header>
+
+<section class="profile-section">
+  <h1>ملفي الشخصي</h1>
+
+  <div class="profile-info">
+    <p><strong>الاسم الكامل:</strong> خالد بوزيان</p>
+    <p><strong>البريد الإلكتروني:</strong> khaled@example.com</p>
+    <p><strong>الهاتف:</strong> +213 123456789</p>
+  </div>
+
+  <div class="profile-actions">
+    <button onclick="editProfile()">تعديل المعلومات</button>
+    <button onclick="changePassword()">تغيير كلمة المرور</button>
+    <button onclick="logout()">تسجيل الخروج</button>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 منصة شامو التعليمية - جميع الحقوق محفوظة</p>
+</footer>
+
+<script src="script.js"></script>
+<script>
+function editProfile() {
+  alert('ميزة تعديل الملف الشخصي قيد التطوير');
+}
+
+function changePassword() {
+  alert('سيتم توجيهك لتغيير كلمة المرور');
+}
+
+function logout() {
+  alert('تم تسجيل الخروج');
+  window.location.href = 'index.html';
+}
+</script>
+
+</body>
+</html>

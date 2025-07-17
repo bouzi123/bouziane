@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>لوحة المشرف - منصة شامو</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<header>
+  <nav class="navbar">
+    <div class="logo">شامو | لوحة المشرف</div>
+    <a href="index.html" class="btn-primary">العودة للموقع</a>
+  </nav>
+</header>
+
+<section class="admin-dashboard">
+  <h1>لوحة تحكم المشرف</h1>
+
+  <div class="admin-actions">
+    <a href="#users" class="btn-secondary">إدارة المستخدمين</a>
+    <a href="#courses" class="btn-secondary">إدارة الدورات</a>
+    <a href="#payments" class="btn-secondary">سجل الدفعات</a>
+    <a href="#reports" class="btn-secondary">التقارير المالية</a>
+  </div>
+
+  <section id="users">
+    <h2>المستخدمون</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>الاسم</th>
+          <th>البريد الإلكتروني</th>
+          <th>الصلاحية</th>
+          <th>إجراءات</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>محمد علي</td>
+          <td>mohamed@example.com</td>
+          <td>مستخدم</td>
+          <td><button>ترقية لمشرف</button> <button>حذف</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="courses">
+    <h2>الدورات</h2>
+    <ul>
+      <li>برمجة الويب <button>تعديل</button> <button>حذف</button></li>
+      <li>ذكاء اصطناعي <button>تعديل</button> <button>حذف</button></li>
+    </ul>
+    <button>إضافة دورة جديدة</button>
+  </section>
+
+  <section id="payments">
+    <h2>سجل الدفعات</h2>
+    <p>إجمالي الإيرادات: <strong>40,000 دج</strong></p>
+    <ul>
+      <li>محمد - 2000 دج - 2025-07-16</li>
+      <li>فاطمة - 2000 دج - 2025-07-15</li>
+    </ul>
+  </section>
+
+  <section id="reports">
+    <h2>التقارير المالية</h2>
+    <p>تحميل التقرير الشهري بصيغة PDF:</p>
+    <button>تحميل</button>
+  </section>
+</section>
+
+<footer>
+  <p>© 2025 منصة شامو التعليمية - جميع الحقوق محفوظة</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

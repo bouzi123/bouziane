@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>منصة شامو التعليمية</title>
+
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+<button class="toggle-theme" onclick="toggleTheme()">🌓</button>
+
+<header>
+  <nav class="navbar">
+    <div class="logo"><i class="fas fa-graduation-cap"></i> شامو</div>
+    <ul class="nav-links">
+      <li><a href="#"><i class="fas fa-home"></i> الرئيسية</a></li>
+      <li><a href="#services"><i class="fas fa-concierge-bell"></i> الخدمات</a></li>
+      <li><a href="course.html "><i class="fas fa-book-open"></i> الدورات</a></li>
+      <li><a href="#about"><i class="fas fa-info-circle"></i> حول المنصة</a></li>
+      <li><a href="#contact"><i class="fas fa-envelope"></i> تواصل</a></li>
+    </ul>
+    <div class="auth-buttons">
+      <a href="login.html" class="btn-login"><i class="fas fa-sign-in-alt"></i> تسجيل الدخول</a>
+      <a href="register.html" class="btn-register"><i class="fas fa-user-plus"></i> التسجيل</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>مرحباً بكم في منصة شامو التعليمية</h1>
+  <p>اكتشف الدورات، الخدمات، والمدربين المحترفين، وابدأ رحلتك التعليمية الآن!</p>
+<a href="#" class="btn-primary" onclick="sayHello()">ابدأ رحلتك معنا</a>
+</section>
+
+<section id="services" class="section reveal">
+  <h2><i class="fas fa-concierge-bell"></i> خدماتنا</h2>
+  <ul>
+    <li><i class="fas fa-comments"></i> منتدى تفاعلي</li>
+    <li><i class="fas fa-certificate"></i> دورات معتمدة</li>
+    <li><i class="fas fa-award"></i> تقييمات وشهادات</li>
+  </ul>
+</section>
+
+<section id="courses" class="section reveal">
+  <h2><i class="fas fa-book-open"></i> الدورات المميزة</h2>
+  <p>تعلم البرمجة <i class="fas fa-code"></i>، الذكاء الاصطناعي <i class="fas fa-robot"></i>، التسويق الرقمي <i class="fas fa-bullhorn"></i> والمزيد.</p>
+</section>
+
+<section id="about" class="section reveal">
+  <h2><i class="fas fa-info-circle"></i> حول شامو</h2>
+  <p>منصة تعليمية تهدف لتطوير مهارات الشباب في العالم العربي عبر محتوى موثوق ومتجدد.</p>
+</section>
+
+<section id="contact" class="section reveal">
+  <h2><i class="fas fa-envelope"></i> تواصل معنا</h2>
+  <form>
+    <input type="text" placeholder="اسمك الكامل" required />
+    <input type="email" placeholder="بريدك الإلكتروني" required />
+    <textarea placeholder="رسالتك..." required></textarea>
+    <button type="submit"><i class="fas fa-paper-plane"></i> إرسال</button>
+  </form>
+</section>
+
+<footer>
+  <p>© 2025 منصة شامو التعليمية - جميع الحقوق محفوظة</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

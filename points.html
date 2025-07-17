@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>نظام النقاط</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f9f9f9;
+      padding: 2rem;
+      text-align: center;
+    }
+    .card {
+      background: white;
+      padding: 1.5rem;
+      margin: auto;
+      border-radius: 12px;
+      max-width: 400px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #0057a3;
+    }
+    .level {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #444;
+    }
+    .rewards {
+      margin-top: 1rem;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>نقاطك ومكافآتك</h2>
+    <p id="username">اسم المستخدم: ...</p>
+    <p>عدد النقاط: <span id="points">0</span></p>
+    <p class="level">مستواك: <span id="level">...</span></p>
+    <div class="rewards">
+      🎁 مكافآتك القادمة: <span id="reward">...</span>
+    </div>
+  </div>
+
+  <!-- Firebase SDKs -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-app.js";
+    import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-firestore.js";
+
+    // إعدادات Firebase الخاصة بك
+    const firebaseConfig = {
+      apiKey: "AIzaSyAqTZuDXNaekonyyTM80uzy1rfJouJ1_-g",
+      authDomain: "chamo-bo.firebaseapp.com",
+      projectId: "chamo-bo",
+      storageBucket: "chamo-bo.firebasestorage.app",
+      messagingSenderId: "145586191106",
+      appId: "1:145586191106:web:08403072f5ff96d428201b",
+      measurementId: "G-HE3FYTH1EH"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // جلب اسم المستخدم من localStorage
+    const username = localStorage.getItem("username") || "مستخدم مجهول";
+    document.getElementById("username").textContent = `اسم المستخدم: ${username}`;
+
+    // جلب النقاط من Firestore
+    async function getUserPoints() {
+      const userRef = doc(db, "users", username);
+      const docSnap = await getDoc(userRef);
+      
+      let points = 0;
+      if (docSnap.exists()) {
+        points = docSnap.data().points || 0;
+      }
+
+      document.getElementById("points").textContent = points;
+
+      // تحديد المستوى
+      let level = "مبتدئ";
+      let reward = "دورة مجانية";
+
+      if (points >= 100) {
+        level = "متقدم";
+        reward = "وسام مميز + شهادة رقمية";
+      } else if (points >= 50) {
+        level = "متوسط";
+        reward = "وسام تقدير";
+      }
+
+      document.getElementById("level").textContent = level;
+      document.getElementById("reward").textContent = reward;
+    }
+
+    getUserPoints();
+  </script>
+</body>
+</html>
